@@ -22,14 +22,16 @@ function signup(req,res){
     } 
      
     const email=req.body.email;
-    if(!validateEmail(email)){
+    if (!validateEmail(email)){
        return  res.render("./signup",{
             err:"Enter a valid email"
         })
     }    
 
     if(req.body.password!=req.body.re_password){
-        return  res.send("password doest match")
+        return  res.render("./signup",{
+            err:"Both password must be same"
+        })
     }  
 
     const password=req.body.password;
