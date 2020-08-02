@@ -1,0 +1,25 @@
+{
+  "name": "codeial-socialmedia",
+  "version": "1.0.0",
+  "description": "It's a basic social media wesite",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/simple-op/Codeial-SocialMedia.git"
+  },
+  "author": "Ramesh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/simple-op/Codeial-SocialMedia/issues"
+  },
+  "homepage": "https://github.com/simple-op/Codeial-SocialMedia#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "ejs": "^3.1.3",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.25"
+  }
+}
