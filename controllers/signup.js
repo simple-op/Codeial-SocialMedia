@@ -16,23 +16,25 @@ function validatePassword(password) {
 
 function signup(req,res){
     if(!req.body.password||!req.body.email||!req.body.password||!req.body.re_password){
-        res.send("fill everything")
+        return  res.render("./signup",{
+            err:"Enter every detail"
+        })
     } 
      
     const email=req.body.email;
     if(!validateEmail(email)){
-        res.render("./signup",{
+       return  res.render("./signup",{
             err:"Enter a valid email"
         })
     }    
 
     if(req.body.password!=req.body.re_password){
-      res.send("password doest match")
+        return  res.send("password doest match")
     }  
 
     const password=req.body.password;
     if(!validatePassword(password)){
-        res.render("./signup",{
+        return  res.render("./signup",{
             err:"Password must be valid "
         })
     } 
@@ -40,7 +42,7 @@ function signup(req,res){
     model.findOne({email:req.body.email},function(err,user){
       if(user){
 
-          res.render("./signup",{
+        return  res.render("./signup",{
               err:"User Already Exists"
           })
 
@@ -57,7 +59,7 @@ function signup(req,res){
              })
         });
         
-        res.render("./login")
+        return  res.render("./login")
           
 
 
