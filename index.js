@@ -3,7 +3,7 @@ const mongoose=require("./config/mongoose");
 const router = require("./routes");
 const ejs=require("ejs");
 const app=express();
-const port=8000;
+const port=process.env.PORT||8000;
 const path=require("path");
 app.use(express.urlencoded());
 
