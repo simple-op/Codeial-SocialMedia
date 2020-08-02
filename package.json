@@ -4,7 +4,7 @@
   "description": "It's a basic social media wesite",
   "main": "index.js",
   "scripts": {
-    "start":"nodemon start",
+    "start":"node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
