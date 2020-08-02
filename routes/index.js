@@ -5,7 +5,7 @@ const router=express.Router();
 
 
 router.get("/",function(req,res){
-    res.render("./homepage");
+    res.render("./login");
 })
 
 router.use(require("./signup"));
