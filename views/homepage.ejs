@@ -3,9 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
     <title>Homepage</title>
 </head>
-<body>
-    <h1>hello <%=username%></h1>
+<body> 
+     <h1> Wecome To Codeial </h1>
+     <% if(locals.user){%>
+    <h1>hello <%=locals.user.name%></h1>
+    <div id="logout">
+    <a href="/logout" id="submit" class="form-submit">Logout</a>
+    
+
+    </div>
+    <%}else{%>
+
+       <div id="logout">
+        <a href="/login" id="submit" class="form-submit">Log In</a> <br>
+
+       </div>   
+
+       <div id="logout">
+        <a href="/signup" id="submit" class="form-submit">Sign up</a>
+
+       </div>
+        
+
+    <%}%>
 </body>
 </html>

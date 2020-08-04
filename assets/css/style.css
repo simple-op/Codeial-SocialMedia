@@ -357,3 +357,20 @@ input[type=checkbox]:not(old):checked + label > span:before {
     padding: 50px 25px; } }
 
 /*# sourceMappingURL=style.css.map */
+a{
+  text-decoration: none;
+  font-size: x-large;
+}
+
+h1{
+  text-align: center;
+}
+
+#logout{
+  
+  display: flex;
+  text-align: center;
+  margin-bottom: 2px;
+  
+  
+}

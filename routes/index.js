@@ -1,12 +1,10 @@
 const express=require("express");
-const signup = require("../controllers/signup");
 const router=express.Router();
 
 
 
-router.get("/",function(req,res){
-    res.render("./login");
-})
+router.get("/",require("../controllers/home").home)
+router.get("/logout",require("../controllers/logout").logout)
 
 router.use(require("./signup"));
 router.use(require("./login"));

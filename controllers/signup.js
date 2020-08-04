@@ -1,5 +1,18 @@
 const model=require("../models/user");
 const bcrypt=require("bcrypt");
+const passport = require("passport");
+
+module.exports.createPage = function(req, res){
+    if(req.isAuthenticated()){
+      return  res.redirect("/");
+    }
+
+    return res.render('./signup', {
+        
+    })
+}
+
+
 
 function validateEmail(email) {
     const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -14,7 +27,8 @@ function validatePassword(password) {
 
 
 
-function signup(req,res){
+module.exports.signup=function(req,res){
+    
     if(!req.body.password||!req.body.email||!req.body.password||!req.body.re_password){
         return  res.render("./signup",{
             err:"Enter every detail"
@@ -74,4 +88,3 @@ function signup(req,res){
 }
 
 
-module.exports=signup;

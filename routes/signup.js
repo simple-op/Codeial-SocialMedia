@@ -3,10 +3,8 @@ const router=express.Router();
 const signup=require("../controllers/signup");
 
 
-router.get("/signup",function(req,res){
-      res.render("./signup")
-})
-router.post("/signup",signup)
+router.get("/signup",signup.createPage)
+router.post("/signup",signup.signup)
 
 
 module.exports=router; 
