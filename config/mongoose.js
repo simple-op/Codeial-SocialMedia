@@ -20,3 +20,4 @@ connection.once("open",function(){
     console.log("Database connected")
 })
 
+module.exports=connection;

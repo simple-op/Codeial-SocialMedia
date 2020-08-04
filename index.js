@@ -9,6 +9,7 @@ var passport = require('passport')
 const session=require("express-session")
 var cookieParser = require('cookie-parser')
 require("./config/passport-local");
+const mongo_connect=require("connect-mongo")(session);
 
 
 app.use(express.urlencoded());
@@ -21,23 +22,28 @@ app.use(session({
    resave:false,
    cookie:{
      maxAge:(1000*60*60*24*2)
-   }
+   },
+   store:new mongo_connect({
+
+     mongooseConnection:mongoose,
+     autoRemove:"disable"
+
+   },function(err){
+     console.log(err||"connect-mongo")
+   })
+
 }))
 
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(passport.isUserAuth);
-
-
 app.set("view engine","ejs");
 app.set("views",path.join(__dirname,"./views"));
-
- 
 app.use(express.static('assets'));
+
 
 app.listen(port,function(){
      
   console.log(`Server Running on ${port}`);
 })
-
 app.use(router);
