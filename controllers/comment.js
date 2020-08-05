@@ -18,7 +18,7 @@ module.exports.comment=function(req,res){
             content:req.body.comment,
             user:req.user,
             post:req.body.post,
-            err:error
+            
         },function(err,commentCreated){
            
 
