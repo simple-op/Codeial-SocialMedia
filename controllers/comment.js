@@ -2,11 +2,6 @@ const passport=require("passport");
 const comment=require("../models/comment");
 const post=require("../models/post");
 
-
-
-
-
-
 module.exports.comment=function(req,res){
     
    if(req.body.comment===""){
@@ -41,6 +36,32 @@ module.exports.comment=function(req,res){
 
    
     
+
+
+}
+
+
+module.exports.deleteComment=function(req,res){
+    
+      comment.findOneAndDelete({_id:req.query.id},function(err,comment){
+            
+        if(err)
+        console.log(err);
+        else{
+               post.findByIdAndUpdate(req.query.postId,{$pull:{comments:req.query.id}},function(err,post){
+                
+                
+                if(err)
+                console.log(err);
+                    
+                   
+                    
+               })
+
+        }
+        return res.redirect("/");    
+
+      })
 
 
 }
