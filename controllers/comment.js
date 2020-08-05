@@ -8,12 +8,17 @@ const post=require("../models/post");
 
 
 module.exports.comment=function(req,res){
-
-     
+    
+   if(req.body.comment===""){
+      
+       return res.redirect("/")
+   }
+    else{   
    comment.create({
             content:req.body.comment,
             user:req.user,
-            post:req.body.post
+            post:req.body.post,
+            err:error
         },function(err,commentCreated){
            
 
@@ -32,7 +37,7 @@ module.exports.comment=function(req,res){
 
 
             res.redirect("/");}
-        })
+        })}
 
    
     

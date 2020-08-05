@@ -8,6 +8,43 @@
 </head>
 <body> 
      <h1> Wecome To Codeial </h1>
+     <% if(locals.user){%>
+        <h1>hello <%=locals.user.name%></h1>
+        <div>
+        <form action="/createPost" method="post">
+        <input name="post" id="postArea" cols="30" rows="5" placeholder="Type Here...........">
+    
+        
+        <button id="logout" class="form-submit" type="submit">Post</button>
+    
+        </form>    
+         
+    
+        </div>
+        <div id="logout">
+        <a href="/logout" id="submit" class="form-submit">Logout</a>
+        
+    
+        </div>
+        <%}else{%>
+            <!-- <div><ul>
+                <%for(post of posts){%>
+                   <li><%=post.content%></post.content> <br> <span><%=post.user.name%></span></li>
+                    <%}%>
+                    </ul>
+            </div>   -->
+           <div id="logout">
+            <a href="/login" id="submit" class="form-submit">Log In</a> <br>
+    
+           </div>   
+    
+           <div id="logout">
+            <a href="/signup" id="submit" class="form-submit">Sign up</a>
+    
+           </div>
+            
+    
+        <%}%>
      <div><ul id="posts" >
         <%for(post of posts){%>
         <li><p><%=post.content%></post.content></p> <br>Posted By: <span><%=post.user.name%></span> <br> Posted on <span><%=post.createdAt%></span>
@@ -21,9 +58,9 @@
             <% if(locals.user){%>
                       
                 <form action="/createComment" method="post">
-                     <input name="comment" id="comment" >
+                     <input name="comment" id="comment" placeholder="Comment Here...">
                      <input name="post" type="hidden" value="<%=post._id%>"> 
-                     <button id="submit" class="form-submit" type="submit">Comment</button>
+                     <button id="logout" class="form-submit" type="submit">Comment</button>
 
                </form>  
                  
@@ -32,42 +69,6 @@
             <%}%>
             </ul>
     </div>  
-     <% if(locals.user){%>
-    <h1>hello <%=locals.user.name%></h1>
-    <div>
-    <form action="/createPost" method="post">
-    <textarea name="post" id="" cols="30" rows="5">
-
-    </textarea>
-    <button id="submit" class="form-submit" type="submit">Post</button>
-
-    </form>    
      
-
-    </div>
-    <div id="logout">
-    <a href="/logout" id="submit" class="form-submit">Logout</a>
-    
-
-    </div>
-    <%}else{%>
-        <!-- <div><ul>
-            <%for(post of posts){%>
-               <li><%=post.content%></post.content> <br> <span><%=post.user.name%></span></li>
-                <%}%>
-                </ul>
-        </div>   -->
-       <div id="logout">
-        <a href="/login" id="submit" class="form-submit">Log In</a> <br>
-
-       </div>   
-
-       <div id="logout">
-        <a href="/signup" id="submit" class="form-submit">Sign up</a>
-
-       </div>
-        
-
-    <%}%>
 </body>
 </html>

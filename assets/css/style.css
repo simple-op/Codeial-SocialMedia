@@ -369,14 +369,15 @@ h1{
 #logout{
   
   display: flex;
-  text-align: center;
-  margin-bottom: 2px;
+  
+  margin-bottom: 10px;
   
   
 }
 ul{
   /* text-align: center; */
   list-style: none;
+  padding-inline-start: 0;
 }
 ul li{
   box-shadow:0 0 10px 10px aliceblue;
@@ -394,6 +395,14 @@ ul li{
 #posts>li p{
   color: #222;
   font-size: x-large;
+
+}
+
+#postArea{
+  
+  height: 100px;
+  width: 20%;
+  margin-bottom: 50px;
 
 }
 
