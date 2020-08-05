@@ -1,16 +1,28 @@
 const passport=require("passport")
-const post=require("../models/post")
+const posts=require("../models/post")
 // const user=require("../models/user")
 
 
 const { populate } = require("../models/post")
+const { comment } = require("./comment")
 
 
 module.exports.home=function(req,res){
-      
-      post.find({}).populate("user").exec(function(err,post)   {  
+     
+   
+        
+        posts.find({}).populate("user").populate({path:"comments",
+        populate:{
+            path:"user"
+        }
+                            
+}).exec(function(err,post)   {  
+           
+            
+           
            return res.render("./homepage",{
                posts:post,
+               
 
            })
       

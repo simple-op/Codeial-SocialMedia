@@ -375,13 +375,26 @@ h1{
   
 }
 ul{
-  text-align: center;
+  /* text-align: center; */
   list-style: none;
 }
 ul li{
   box-shadow:0 0 10px 10px aliceblue;
   margin-bottom: 5px;
+  padding: 5px;
   font-weight: bold;
   background-color :transparent;
   
 }
+
+#posts>li{
+      padding: 50px;
+
+}
+#posts>li p{
+  color: #222;
+  font-size: x-large;
+
+}
+
+

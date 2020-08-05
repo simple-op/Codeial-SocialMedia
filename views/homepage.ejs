@@ -8,9 +8,27 @@
 </head>
 <body> 
      <h1> Wecome To Codeial </h1>
-     <div><ul>
+     <div><ul id="posts" >
         <%for(post of posts){%>
-           <li><%=post.content%></post.content> <br> <span><%=post.user.name%></span> <br> Posted on <span><%=post.createdAt%></span></li>
+        <li><p><%=post.content%></post.content></p> <br>Posted By: <span><%=post.user.name%></span> <br> Posted on <span><%=post.createdAt%></span>
+            <div>
+                <ul>   <%for(comment in post.comments){%>
+                          <li><%=post.comments[comment].content%><br> Commented By: <span><%=post.comments[comment].user.name%></span></li>
+                        <%}%>
+                </ul>
+            </div>
+
+            <% if(locals.user){%>
+                      
+                <form action="/createComment" method="post">
+                     <input name="comment" id="comment" >
+                     <input name="post" type="hidden" value="<%=post._id%>"> 
+                     <button id="submit" class="form-submit" type="submit">Comment</button>
+
+               </form>  
+                 
+                <%}%>    
+        </li>
             <%}%>
             </ul>
     </div>  

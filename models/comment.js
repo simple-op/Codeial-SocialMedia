@@ -12,13 +12,11 @@ const schema=new mongoose.Schema({
         
         
     },
-    comments:[
-     {
+    post:{
         type:mongoose.Schema.Types.ObjectId,
-        ref:"comment"
-     }
+        ref:"post"
 
-    ]
+    }
     
      
 
@@ -27,6 +25,6 @@ const schema=new mongoose.Schema({
 })
 
 
-const postModel=mongoose.model("post",schema);
+const commentModel=mongoose.model("comment",schema);
 
-module.exports=postModel;
+module.exports=commentModel;
