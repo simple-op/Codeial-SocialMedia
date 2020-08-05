@@ -374,3 +374,14 @@ h1{
   
   
 }
+ul{
+  text-align: center;
+  list-style: none;
+}
+ul li{
+  box-shadow:0 0 10px 10px aliceblue;
+  margin-bottom: 5px;
+  font-weight: bold;
+  background-color :transparent;
+  
+}

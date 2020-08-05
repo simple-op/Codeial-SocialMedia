@@ -8,15 +8,37 @@
 </head>
 <body> 
      <h1> Wecome To Codeial </h1>
+     <div><ul>
+        <%for(post of posts){%>
+           <li><%=post.content%></post.content> <br> <span><%=post.user.name%></span> <br> Posted on <span><%=post.createdAt%></span></li>
+            <%}%>
+            </ul>
+    </div>  
      <% if(locals.user){%>
     <h1>hello <%=locals.user.name%></h1>
+    <div>
+    <form action="/createPost" method="post">
+    <textarea name="post" id="" cols="30" rows="5">
+
+    </textarea>
+    <button id="submit" class="form-submit" type="submit">Post</button>
+
+    </form>    
+     
+
+    </div>
     <div id="logout">
     <a href="/logout" id="submit" class="form-submit">Logout</a>
     
 
     </div>
     <%}else{%>
-
+        <!-- <div><ul>
+            <%for(post of posts){%>
+               <li><%=post.content%></post.content> <br> <span><%=post.user.name%></span></li>
+                <%}%>
+                </ul>
+        </div>   -->
        <div id="logout">
         <a href="/login" id="submit" class="form-submit">Log In</a> <br>
 
