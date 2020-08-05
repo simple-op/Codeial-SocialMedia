@@ -349,6 +349,9 @@ input[type=checkbox]:not(old):checked + label > span:before {
   color: #555; }
 
 @media screen and (max-width: 768px) {
+  #postArea{
+      width: 100%;
+  }
   .container {
     width: calc(100% - 40px);
     max-width: 100%; } }
@@ -400,8 +403,8 @@ ul li{
 
 #postArea{
   
-  height: 100px;
-  width: 20%;
+  height: 70px;
+  width: 250px;
   margin-bottom: 50px;
 
 }
