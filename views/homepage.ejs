@@ -7,9 +7,8 @@
     <title>Homepage</title>
 </head>
 <body> 
-     <h1> Wecome To Codeial </h1>
      <% if(locals.user){%>
-        <h1>hello <%=locals.user.name%></h1>
+        <h1>Hey <%=locals.user.name%></h1>
         <div>
         <form action="/createPost" method="post">
         <input name="post" id="postArea" cols="30" rows="5" placeholder="Type Here...........">
@@ -21,8 +20,12 @@
          
     
         </div>
-        <div id="logout">
-        <a href="/logout" id="submit" class="form-submit">Logout</a>
+        <div class="logout header">
+     <h1>  
+       Wecome To Codeial </h1>
+    
+
+        <a href="/logout"  class="logout">Logout</a>
         
     
         </div>

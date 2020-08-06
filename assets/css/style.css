@@ -407,11 +407,34 @@ ul li{
   height: 70px;
   width: 250px;
   margin-bottom: 50px;
+  border-radius: 50px;
+  border-width: 0;
 
 }
 
 li a{
   float: right;
   color: red;
+
+}
+
+.logout{
+    position: fixed;
+    right: 0;
+    top: 0;
+    padding: 5px;
+   
+    font-size: medium;
+    font-weight: bold;
+    color: red;
+
+}
+
+.header{
+
+    height: 10%;
+    width: 100%;
+    background-color: cadetblue;
+    color:cornsilk;
 
 }
