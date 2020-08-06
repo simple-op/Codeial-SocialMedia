@@ -48,16 +48,14 @@ module.exports.deleteComment=function(req,res){
             comment.findById(req.query.id,function(err,commentFound){
                
 
-        if(postFound!=null&&((postFound.user.equals(req.user._id))||(req.user._id.equals(commentFound.user)))){    
-       comment.findOneAndDelete({_id:req.query.id},function(err,comment){
+            if(postFound!=null&&((postFound.user.equals(req.user._id))||(req.user._id.equals(commentFound.user)))){    
+            comment.findOneAndDelete({_id:req.query.id},function(err,comment){
             
-        if(err)
-        console.log(err);
-        else{
-               post.findByIdAndUpdate(req.query.postId,{$pull:{comments:req.query.id}},function(err,post){
-                 
-                
-                if(err)
+            if(err)
+            console.log(err);
+            else{
+                   post.findByIdAndUpdate(req.query.postId,{$pull:{comments:req.query.id}},function(err,post){
+             if(err)
                 console.log(err);
                     
                    
