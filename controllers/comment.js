@@ -4,11 +4,11 @@ const post=require("../models/post");
 
 module.exports.comment=function(req,res){
     
-   if(req.body.comment===""){
+   if(req.user==undefined||req.body.comment===""){
       
        return res.redirect("/")
    }
-    else{   
+    else{    
    comment.create({
             content:req.body.comment,
             user:req.user,
@@ -42,8 +42,14 @@ module.exports.comment=function(req,res){
 
 
 module.exports.deleteComment=function(req,res){
-    
-      comment.findOneAndDelete({_id:req.query.id},function(err,comment){
+      
+      post.findById(req.query.postId,function(err,postFound){
+          
+            comment.findById(req.query.id,function(err,commentFound){
+               
+
+        if(postFound!=null&&((postFound.user.equals(req.user._id))||(req.user._id.equals(commentFound.user)))){    
+       comment.findOneAndDelete({_id:req.query.id},function(err,comment){
             
         if(err)
         console.log(err);
@@ -62,6 +68,8 @@ module.exports.deleteComment=function(req,res){
         return res.redirect("/");    
 
       })
+        }
+    })})
 
 
 }

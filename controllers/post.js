@@ -6,7 +6,8 @@ const comment=require("../models/comment")
 
 
 module.exports.post=function(req,res){
-     
+
+   if(req.user){  
    post.create({
             content:req.body.post,
             user:req.user
@@ -23,13 +24,15 @@ module.exports.post=function(req,res){
     
 
 
-}
+}}
 
 module.exports.deletePost=function(req,res){
 
-
-
+post.findById(req.query.id,function(err,postFound){
+ if(err)
+ console.log(err)
       
+else if((postFound!=null)&&postFound.user.equals(req.user._id)){     
 post.findByIdAndDelete(req.query.id,function(err,post){
 
     for(comments of post.comments){
@@ -43,7 +46,7 @@ post.findByIdAndDelete(req.query.id,function(err,post){
     }
     if(err)
     console.log(err);
-})
+})}})
  
 return res.redirect("/");
 
