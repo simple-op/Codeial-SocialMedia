@@ -386,8 +386,9 @@ ul{
   padding-inline-start: 0;
 }
 ul li{
-  box-shadow:0 0 10px 10px aliceblue;
-  margin-bottom: 5px;
+  color: #ebebeb;
+  box-shadow:0 0 5px 5px aliceblue;
+  margin: 25px 0;
   padding: 5px;
   font-weight: bold;
   background-color :transparent;
@@ -396,13 +397,24 @@ ul li{
 
 #posts>li{
       padding: 50px;
+      background-color: black;
 
 }
 #posts>li p{
-  color: #222;
+
+  color:aqua;
   font-size: x-large;
 
 }
+
+#posts>li input{
+
+  border-radius: 10px;
+  padding: 5px;
+  border-width: 0;
+}
+
+
 
 #postArea{
   
