@@ -1,5 +1,7 @@
 const passport=require("passport");
 const post=require("../models/post");
+const comment=require("../models/comment")
+
 
 
 
@@ -25,8 +27,20 @@ module.exports.post=function(req,res){
 
 module.exports.deletePost=function(req,res){
 
+
+
       
 post.findByIdAndDelete(req.query.id,function(err,post){
+
+    for(comments of post.comments){
+
+        comment.findByIdAndDelete(comments,function(err,comments){
+            if(err)
+            console.log(err);
+
+        })
+
+    }
     if(err)
     console.log(err);
 })

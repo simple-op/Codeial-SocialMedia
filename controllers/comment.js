@@ -49,7 +49,7 @@ module.exports.deleteComment=function(req,res){
         console.log(err);
         else{
                post.findByIdAndUpdate(req.query.postId,{$pull:{comments:req.query.id}},function(err,post){
-                
+                 
                 
                 if(err)
                 console.log(err);
