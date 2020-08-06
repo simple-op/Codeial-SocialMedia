@@ -48,7 +48,7 @@ module.exports.deleteComment=function(req,res){
             comment.findById(req.query.id,function(err,commentFound){
                
 
-            if(postFound!=null&&((postFound.user.equals(req.user._id))||(req.user._id.equals(commentFound.user)))){    
+            if(commentFound!=null&&postFound!=null&&((postFound.user.equals(req.user._id))||(req.user._id.equals(commentFound.user)))){    
             comment.findOneAndDelete({_id:req.query.id},function(err,comment){
             
             if(err)
