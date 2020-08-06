@@ -7,12 +7,21 @@
     <title>Homepage</title>
 </head>
 <body> 
+  <div class="logout header">
+    <h1>  
+      Wecome To Codeial </h1>
+   
+      <% if(locals.user){%>
+       <a href="/logout"  class="logout">Logout</a>
+       <%}%>
+   
+       </div>
      <% if(locals.user){%>
         <h1>Hey <%=locals.user.name%></h1>
         <div>
         <form action="/createPost" method="post">
         <input name="post" id="postArea" cols="30" rows="5" placeholder="Type Here...........">
-    
+        <!-- <input type="file" name="" id=""> -->
         
         <button id="logout" class="form-submit" type="submit">Post</button>
     
@@ -20,15 +29,7 @@
          
     
         </div>
-        <div class="logout header">
-     <h1>  
-       Wecome To Codeial </h1>
-    
-
-        <a href="/logout"  class="logout">Logout</a>
-        
-    
-        </div>
+       
         <%}else{%>
             <!-- <div><ul>
                 <%for(post of posts){%>
