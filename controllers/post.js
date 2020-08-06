@@ -22,3 +22,15 @@ module.exports.post=function(req,res){
 
 
 }
+
+module.exports.deletePost=function(req,res){
+
+      
+post.findByIdAndDelete(req.query.id,function(err,post){
+    if(err)
+    console.log(err);
+})
+ 
+return res.redirect("/");
+
+}
