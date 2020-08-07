@@ -46,14 +46,14 @@
                <br>Posted By: <span>${postData.user.name}</span> 
               
                
-               <br> Posted On: <span>${postData.createdAt}</span>
+               <br> Posted On: <span>${ postData.createdAt}</span>
                
    
             
                          
                    <form action="/createComment" method="post">
                         <input name="comment" id="comment" placeholder="Comment Here...">
-                        <input name="post" type="hidden" value="${postData._id}> 
+                        <input name="post" type="hidden" value="${postData._id}"> 
                         <button id="logout" class="form-submit" type="submit">Comment</button>
    
                   </form>  
@@ -68,5 +68,36 @@
            }  
 
     
+           let createComment=function(){
+    
+            let postForm=$("#post-form");
+            postForm.submit(function(e){
+            e.preventDefault();
+        
+            $.ajax({
+                type:"post",
+                url:"/createPost",
+               
+                data:postForm.serialize(),
+                success:function(data){
+                 if(data.data.posts)
+                    {   let postList=$("#posts"); 
+                        postList.prepend(appendPost(data.data.posts));
+        
+                    }
+                },
+                Error:function(err){
+                    console.log(err.responseText);
+                }
+            
+            
+               });
+               });
+        }
+                createComment();
+
+
+
+
 
 }

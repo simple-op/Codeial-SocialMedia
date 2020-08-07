@@ -366,9 +366,6 @@ a{
   font-size: x-large;
 }
 
-h1{
-  text-align: center;
-}
 
 #logout{
   
@@ -418,13 +415,15 @@ ul li{
 
 #postArea{
   
-  height: 70px;
+  height: 100%;
   width: 250px;
-  margin-bottom: 50px;
-  border-radius: 50px;
-  border-width: 0;
-  padding: 10px;
-    box-shadow: inset 0 0 25px 0px mediumseagreen;
+  border-radius: 25px;
+  font-size: large;
+  resize: none;
+  font-weight: bold;
+  padding: 20px;
+  margin:0; 
+  box-shadow: inset 0 0 25px 0px mediumseagreen;
 
 }
 
@@ -447,14 +446,50 @@ li a{
 }
 
 .header{
-
+    
     height: 10%;
     width: 100%;
     background-image: linear-gradient(to left, #74ebd5, #9face6);
     color:white;
+    text-align: center;
 
 }
+.header>h1{
+
+  display: inline-block;
+  padding: 10px;
+  
+}
+
+#user{
+     float: left;
+}
+
+
+
 #comment{
 
   width: 150px;
+}
+
+
+#container>section{
+  display: inline-block;
+}
+
+#left{
+ 
+     width: 20%;
+}
+
+#right{
+  
+  width: 20%;
+   
+}
+
+#postContainer{
+
+     width: 60%;
+
 }

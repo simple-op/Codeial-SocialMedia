@@ -11,14 +11,16 @@ module.exports.home=async function(req,res){
      
    
         
-        let posts=await Posts.find({}).populate("user").populate({path:"comments",
+        let posts=await Posts.find({}).sort("-createdAt").populate("user").populate({path:"comments",
+        
         populate:{
             path:"user"
         }
                             
 })  
            
-            
+           console.log(posts)
+
            
            return res.render("./homepage",{
                posts:posts,
