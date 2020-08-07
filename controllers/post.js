@@ -17,6 +17,18 @@ module.exports.post=function(req,res){
             if(err){
                 console.log(err);
             }
+             if(req.xhr){
+                 return res.status(200).json({
+                  data:{
+                      posts:post
+                  },
+                  message:"Post Created!"
+
+               
+
+                 })
+             }
+
             res.redirect("/");
         })
 

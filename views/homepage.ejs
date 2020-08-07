@@ -19,7 +19,7 @@
      <% if(locals.user){%>
         <h1>Hey <%=locals.user.name%></h1>
         <div>
-        <form action="/createPost" method="post">
+        <form action="/createPost" method="post" id="post-form">
         <input name="post" id="postArea" cols="30" rows="5" placeholder="Type Here...........">
         <!-- <input type="file" name="" id=""> -->
         
@@ -93,5 +93,7 @@
             </ul>
     </div>  
      
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="js/home.js"></script>
 </body>
 </html>

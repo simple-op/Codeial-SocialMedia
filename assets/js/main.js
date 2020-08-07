@@ -1,6 +1,16 @@
 (function($) {
+     let createPost=function(e){
+       $("")
+       
 
-    $(".toggle-password").click(function() {
+
+     }
+
+
+
+
+
+     $(".toggle-password").click(function() {
 
         $(this).toggleClass("zmdi-eye-off zmdi-eye");
         var input = $($(this).attr("toggle"));
