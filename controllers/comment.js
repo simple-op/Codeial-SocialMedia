@@ -23,9 +23,24 @@ module.exports.comment=async function(req,res){
        console.log(err);
             
            
-}) 
+})        
+            if(req.xhr){
+             return res.status(200).json({
+               data:{
+                    content:req.body.comment,
 
+                    user:req.user,
+                    post:req.body.post,
+                    id:commentCreated._id
 
+               }
+                 
+
+             })
+           
+
+            }
+           
             res.redirect("/");} 
         }
 
