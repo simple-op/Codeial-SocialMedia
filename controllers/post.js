@@ -58,8 +58,28 @@ post.findByIdAndDelete(req.query.id,function(err,post){
     }
     if(err)
     console.log(err);
-})}})
+    
+    
+
+})}
+
+if(req.xhr&&postFound){
+    return res.status(200).json({
+     data:{
+         post_id:postFound._id
+     },
+     message:"Post Deleted!"
+
+  
+
+    })
+}
+
+return res.redirect("/")
+})
  
-return res.redirect("/");
+
+
+
 
 }
