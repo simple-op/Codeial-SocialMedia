@@ -1,11 +1,5 @@
 (function($) {
-     let createPost=function(e){
-       $("")
-       
-
-
-     }
-
+     
 
 
 
