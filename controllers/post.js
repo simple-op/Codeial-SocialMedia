@@ -46,7 +46,7 @@ post.findById(req.query.id,function(err,postFound){
       
 else if((postFound!=null)&&postFound.user.equals(req.user._id)){     
 post.findByIdAndDelete(req.query.id,function(err,post){
-
+   if(post)
     for(comments of post.comments){
 
         comment.findByIdAndDelete(comments,function(err,comments){

@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="shortcut icon" href="/images/" type="image/x-icon">
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/style.css">
-    <title>Homepage</title>
+    <title>Codeial</title>
 </head>
 <body>
     <section  id="header">
@@ -52,7 +52,7 @@
                         </ul>
                 </div>   -->
                <div id="logout">
-                <a href="/login" id="submit" class="form-submit">Log In</a> <br>
+                <a href="/login"  id="submit" class="form-submit">Log In</a> <br>
         
                </div>   
         
@@ -68,7 +68,7 @@
             <%for(post of posts){%>
             <li><p><%=post.content%>
                 <% if((locals.user)&&(post.user._id.equals(locals.user._id))){%>
-                    <a  id="<%=post._id%>" class="postDeleteLink"   href="/deletePost/?id=<%=post._id%>"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-x-circle-fill" fill="currentColor" >
+                    <a  id="<%=post._id%>" onclick="deletePost(this)"  class="postDeleteLink"    href="/deletePost/?id=<%=post._id%>"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-x-circle-fill" fill="currentColor" >
                       <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.146-3.146a.5.5 0 0 0-.708-.708L8 7.293 4.854 4.146a.5.5 0 1 0-.708.708L7.293 8l-3.147 3.146a.5.5 0 0 0 .708.708L8 8.707l3.146 3.147a.5.5 0 0 0 .708-.708L8.707 8l3.147-3.146z"/>
                     </svg></a>
                   <%}%>
