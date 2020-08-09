@@ -117,7 +117,7 @@
                     
                     success:function(data){
                         if(data.data.post_id){
-                            console.log(data.data.post_id);
+                            
                             
                              $(`#${data.data.post_id}`).parent().parent().remove();
                         }
@@ -164,7 +164,7 @@ $(element).submit(function(e){
 
 function createCommentAtPost(element){
      
-    console.log($(element).parent());
+    
     $.ajax({
        type:"post",
        url:"/createComment",
@@ -175,7 +175,7 @@ function createCommentAtPost(element){
            {    
                
                let commentList=$(`#commentsList${data.data.post}`);
-               console.log(commentList);
+               
                commentList.prepend(appendComment(data.data));
                // deletePost(`#${data.data.posts._id}`);
                disableDefaultComments(".deleteNewComments");
@@ -233,7 +233,7 @@ function deleteCommentAtPost(element){
        success:function(data){
         if(data.data)
            {    
-    console.log(data);
+    
                
                $(element).parent().parent().remove();
                
