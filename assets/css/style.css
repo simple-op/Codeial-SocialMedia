@@ -495,7 +495,9 @@ li a{
      width: 60%;
 
 }
-
+#user{
+  display: none;
+}
 #postArea:focus{
   box-shadow: inset 0 0 25px 0px mediumseagreen;
   /* -webkit-box-shadow: initial; */
@@ -513,8 +515,9 @@ li a{
   
 }
 
+
 #postContainer{
-  padding: 5px;
-  width: 90%;
+  
+  width: 100%;
 }
 }
