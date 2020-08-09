@@ -54,8 +54,7 @@ module.exports.comment=async function(req,res){
 module.exports.deleteComment=function(req,res){
       
       post.findById(req.query.postId,function(err,postFound){
-          
-            comment.findById(req.query.id,function(err,commentFound){
+      comment.findById(req.query.id,function(err,commentFound){
                
 
             if(commentFound!=null&&postFound!=null&&((postFound.user.equals(req.user._id))||(req.user._id.equals(commentFound.user)))){    
@@ -73,6 +72,19 @@ module.exports.deleteComment=function(req,res){
                })
 
         }
+        if(req.xhr){
+          return res.status(200).json({
+            data:{
+                 
+               comment_id:commentFound._id,
+
+            }
+              
+
+          })
+        
+
+         }
         return res.redirect("/");    
 
       })
