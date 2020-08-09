@@ -449,7 +449,7 @@ li a{
 
 .header{
     
-    height: 10%;
+    height: 70px;
     width: 100%;
     background-image: linear-gradient(to left, #74ebd5, #9face6);
     color:white;
