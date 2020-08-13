@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codial | <%=locals.user.name%></title>
+</head>
+<body>
+    <section  id="header">
+     
+        <div class="logout header">
+          <% if(locals.user){%>
+            <h1 id="user"> Hey <a href="/profile?id=<%=locals.user.id%>"><%=locals.user.name%></a> </h1>
+              <%}%> 
+        <h1 id="title">  
+      <a href="/"> Wecome To Codeial</a>  </h1>
+     
+        <% if(locals.user){%>
+         <a href="/logout"  class="logout">Logout</a>
+         <%}%>
+     
+        </div>
+     </section>
+    <img src="<%=locals.user.avatar%>" height="200px" width="200px" alt="<%=locals.user.name%>">
+    <h2><%=locals.user.name%></h2>
+    <%if(locals.user.id===profileId) {%>
+    <form action="/profile/update?profileId=<%=profileId%>" method="post" enctype="multipart/form-data">
+    <input type="text" name="name"  placeholder="name" required value="<%=locals.user.name%>">
+    <input type="email" name="email" placeholder="email" required value="<%=locals.user.email%>">
+    <input type="file" name="avatar" >
+    <button type="submit" class="form-submit">Update</button>
+    
+    
+    </form>
+
+    <%}%>
+</body>
+</html>

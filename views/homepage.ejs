@@ -12,7 +12,7 @@
      
         <div class="logout header">
           <% if(locals.user){%>
-            <h1 id="user"> Hey <%=locals.user.name%></h1>
+            <h1 id="user"> Hey <a href="/profile?id=<%=locals.user.id%>"><%=locals.user.name%></a> </h1>
               <%}%> 
         <h1 id="title">  
         Wecome To Codeial </h1>

@@ -40,6 +40,7 @@ app.use(passport.isUserAuth);
 app.set("view engine","ejs");
 app.set("views",path.join(__dirname,"./views"));
 app.use(express.static('assets'));
+app.use("/uploads",express.static(__dirname+"/uploads"))
 
 
 app.listen(port,function(){
